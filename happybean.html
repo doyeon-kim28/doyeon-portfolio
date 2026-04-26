@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김도연 | CSR Operations Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+    --bg:#FAFAF9;--card:#FFF;--ink:#0C0A09;--sub:#57534E;--muted:#A8A29E;
+    --line:#E7E5E4;--ls:#F5F5F4;
+    --pr:#00AB33;--pd:#008A29;--pl:#E5F7EB;--pm:#F0FBF4;
+    --warm:#EA580C;--wl:#FFF7ED;
+    --r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{font-weight:700;letter-spacing:-0.025em}
+a{color:var(--pr);text-decoration:none}
+
+.layout{display:grid;grid-template-columns:252px 1fr;min-height:100vh}
+aside{background:var(--card);border-right:1px solid var(--line);padding:2rem 1.4rem;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+.sb-top{flex:1}
+
+.brand-mascot{text-align:center;margin-bottom:0.8rem}
+.mascot-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:0.3rem}
+.mascot-svg{width:54px;height:54px;filter:drop-shadow(0 2px 6px rgba(0,171,51,0.25))}
+.brand .name{font-size:1.15rem;font-weight:800;text-align:center}
+.brand .pos{font-size:0.66rem;color:var(--pd);font-weight:600;background:var(--pl);padding:0.2rem 0.5rem;border-radius:5px;display:block;margin-top:0.3rem;line-height:1.45;text-align:center}
+.brand .sub-role{font-size:0.68rem;color:var(--sub);margin-top:0.35rem;line-height:1.5;text-align:center}
+
+nav{display:flex;flex-direction:column;gap:1px;margin-top:1.8rem}
+nav a{font-size:0.8rem;color:var(--sub);padding:0.5rem 0.7rem;border-radius:8px;cursor:pointer;transition:all 0.15s;font-weight:500;display:flex;align-items:center;gap:0.55rem}
+nav .d{width:5px;height:5px;border-radius:50%;background:var(--muted);opacity:0.3;transition:all 0.15s;flex-shrink:0}
+nav a:hover{background:var(--ls);color:var(--ink)}
+nav a.active{background:var(--pm);color:var(--pd);font-weight:600}
+nav a.active .d{background:var(--pr);opacity:1;box-shadow:0 0 0 3px rgba(0,171,51,0.12)}
+
+.sb-btm{padding-top:1rem;border-top:1px solid var(--line);margin-top:1.5rem}
+.cl{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);font-weight:600;margin-bottom:0.4rem}
+.ci{font-size:0.75rem;color:var(--sub);line-height:1.8}
+
+main{padding:2.5rem 3rem;max-width:1060px}
+section{display:none;animation:fu 0.3s ease}
+section.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pr);font-weight:700;margin-bottom:0.5rem}
+.h1{font-size:1.85rem;font-weight:800;line-height:1.25;margin-bottom:0.6rem;letter-spacing:-0.035em}
+.h1 .em{background:linear-gradient(135deg,#00AB33,#008A29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead{font-size:0.88rem;color:var(--sub);line-height:1.8;max-width:640px;margin-bottom:2.2rem}
+.label{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:0.5rem}
+
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;margin-bottom:2.2rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem;transition:all 0.2s;position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,#00AB33,#008A29);border-radius:var(--r) var(--r) 0 0;opacity:0;transition:opacity 0.2s}
+.kpi:hover{border-color:rgba(0,171,51,0.25);box-shadow:0 4px 16px -4px rgba(12,10,9,0.1);transform:translateY(-2px)}
+.kpi:hover::after{opacity:1}
+.kpi-badge{font-size:0.58rem;font-weight:700;letter-spacing:0.1em;color:var(--pr);text-transform:uppercase;margin-bottom:0.3rem}
+.kpi-v{font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(135deg,#00AB33,#008A29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kpi-l{font-size:0.72rem;color:var(--sub);margin-top:0.25rem;font-weight:500;line-height:1.45}
+.kpi-src{font-size:0.62rem;color:var(--muted);margin-top:0.35rem}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.5rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem;transition:all 0.2s;height:100%}
+.card:hover{border-color:rgba(0,171,51,0.2);box-shadow:0 4px 16px -4px rgba(12,10,9,0.08);transform:translateY(-1px)}
+.card h4{font-size:0.88rem;margin-bottom:0.4rem}
+.card p{font-size:0.78rem;color:var(--sub);line-height:1.7}
+
+.skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem;transition:all 0.2s}
+.skill-card:hover{border-color:rgba(0,171,51,0.2);box-shadow:0 4px 16px -4px rgba(12,10,9,0.08)}
+.skill-domain{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pr);margin-bottom:0.5rem}
+.skill-card h4{font-size:0.9rem;font-weight:700;margin-bottom:0.6rem}
+.skill-item{display:flex;align-items:flex-start;gap:0.45rem;margin-bottom:0.32rem}
+.skill-dot{width:4px;height:4px;border-radius:50%;background:var(--pr);margin-top:0.44rem;flex-shrink:0}
+.skill-item span{font-size:0.78rem;color:var(--sub);line-height:1.55}
+
+.tl{position:relative;padding-left:1.5rem}
+.tl::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#00AB33 0%,var(--line) 100%)}
+.tl-i{position:relative;padding-bottom:1rem}
+.tl-i:last-child{padding-bottom:0}
+.tl-i::before{content:'';position:absolute;left:-1.28rem;top:0.45rem;width:12px;height:12px;border-radius:50%;background:var(--card);border:2.5px solid var(--pr)}
+.tl-i.now::before{background:var(--pr);box-shadow:0 0 0 4px rgba(0,171,51,0.12)}
+.tl-c{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0.9rem 1.1rem;transition:all 0.15s}
+.tl-c:hover{border-color:rgba(0,171,51,0.2);box-shadow:0 2px 8px -2px rgba(12,10,9,0.08)}
+.tl-h{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.4rem}
+.tl-co{font-size:0.88rem;font-weight:700}
+.tl-p{font-size:0.68rem;color:var(--pr);font-weight:600}
+.tl-org{font-size:0.72rem;color:var(--muted);margin-top:0.1rem}
+.tl-desc{font-size:0.78rem;color:var(--sub);margin-top:0.35rem;line-height:1.65}
+.tl-tags{display:flex;gap:0.3rem;flex-wrap:wrap;margin-top:0.4rem}
+.tag{font-size:0.6rem;font-weight:600;padding:0.12rem 0.4rem;border-radius:5px}
+.tag-g{background:var(--pl);color:var(--pd)}
+.tag-b{background:#DBEAFE;color:#1D4ED8}
+.tag-p{background:#F3E8FF;color:#7C3AED}
+.tag-o{background:var(--wl);color:var(--warm)}
+
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.6rem;margin-bottom:0.9rem;transition:all 0.2s}
+.proj:hover{box-shadow:0 6px 20px -6px rgba(12,10,9,0.12);border-color:rgba(0,171,51,0.18)}
+.proj-badge{display:inline-block;font-size:0.6rem;font-weight:700;background:linear-gradient(135deg,#00AB33,#008A29);color:white;padding:0.15rem 0.5rem;border-radius:999px;letter-spacing:0.04em}
+.proj-where{font-size:0.72rem;color:var(--muted);margin-left:0.4rem;font-weight:500}
+.proj-t{font-size:1.05rem;font-weight:700;margin:0.35rem 0 0.25rem;letter-spacing:-0.02em}
+.proj-s{font-size:0.8rem;color:var(--sub);margin-bottom:1rem;line-height:1.6}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.9rem}
+.proj-grid .label{margin-bottom:0.3rem}
+.proj-grid p{font-size:0.78rem;color:var(--sub);line-height:1.65}
+.proj-grid ul{margin:0;padding-left:0.9rem}
+.proj-grid li{font-size:0.78rem;color:var(--ink);line-height:1.7;margin-bottom:0.2rem}
+
+table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
+th,td{padding:0.6rem 0.9rem;text-align:left;font-size:0.78rem;border-bottom:1px solid var(--ls)}
+th{background:var(--bg);color:var(--muted);font-weight:600;font-size:0.65rem;letter-spacing:0.07em;text-transform:uppercase}
+tr:last-child td{border-bottom:none}
+
+.trust-banner{background:linear-gradient(135deg,var(--pm),#E8F9EE);border:1px solid rgba(0,171,51,0.15);border-radius:var(--r);padding:1rem 1.4rem;margin-bottom:2rem;display:flex;gap:2rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:0.5rem}
+.trust-icon{font-size:0.85rem}
+.trust-txt{font-size:0.74rem;color:var(--pd);font-weight:600}
+
+.footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:0.7rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+@media(max-width:900px){
+    .layout{grid-template-columns:1fr}
+    aside{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line)}
+    main{padding:1.5rem 1.2rem}
+    .kpi-row,.g2,.g3,.proj-grid,.trust-banner{grid-template-columns:1fr}
+    .trust-banner{flex-direction:column;gap:0.7rem}
+    .h1{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+    <div class="sb-top">
+        <div class="brand-mascot">
+            <div class="mascot-wrap">
+                <svg class="mascot-svg" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="27" cy="31" rx="15" ry="17" fill="url(#beanGrad)"/>
+                    <path d="M19 23 Q27 17 35 23" stroke="#007A22" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+                    <circle cx="22" cy="28" r="2.3" fill="white"/>
+                    <circle cx="32" cy="28" r="2.3" fill="white"/>
+                    <circle cx="22.8" cy="28.6" r="1.1" fill="#1A1A1A"/>
+                    <circle cx="32.8" cy="28.6" r="1.1" fill="#1A1A1A"/>
+                    <circle cx="23.2" cy="28.1" r="0.42" fill="white"/>
+                    <circle cx="33.2" cy="28.1" r="0.42" fill="white"/>
+                    <path d="M21.5 34 Q27 39 32.5 34" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                    <ellipse cx="19" cy="32" rx="2.3" ry="1.4" fill="#FF9AAE" opacity="0.38"/>
+                    <ellipse cx="35" cy="32" rx="2.3" ry="1.4" fill="#FF9AAE" opacity="0.38"/>
+                    <path d="M27 14 Q31 7 37 9 Q34 15 27 14Z" fill="#00AB33"/>
+                    <path d="M27 14 Q23 7 17 9 Q20 15 27 14Z" fill="#008A29"/>
+                    <defs>
+                        <linearGradient id="beanGrad" x1="12" y1="14" x2="42" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#00C43C"/>
+                            <stop offset="100%" stop-color="#007D24"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand">
+                    <div class="name">김도연</div>
+                    <div class="pos">기업 사회공헌 파트너십 및 운영<br>(CSR Operations)</div>
+                    <div class="sub-role">현장의 진정성을 플랫폼의 기술로<br>연결하는 CSR 전문가</div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <a data-section="intro" class="active"><span class="d"></span>소개</a>
+            <a data-section="projects"><span class="d"></span>주요성과</a>
+            <a data-section="skills"><span class="d"></span>전문역량</a>
+            <a data-section="career"><span class="d"></span>경력이력</a>
+            <a data-section="credentials"><span class="d"></span>자격사항</a>
+        </nav>
+    </div>
+    <div class="sb-btm">
+        <div class="cl">Contact</div>
+        <div class="ci">jsskydd123@gmail.com<br>010-2079-0828</div>
+    </div>
+</aside>
+
+<main>
+
+<!-- ===== 소개 ===== -->
+<section id="intro" class="active">
+    <div class="eyebrow">Introduction</div>
+    <h1 class="h1">기업의 선한 영향력을<br><span class="em">데이터의 신뢰로 증명합니다.</span></h1>
+    <p class="lead">
+        대학병원 사회공헌 현장에서 공익 사업의 실체를 설계했고, 네이버클라우드에서 B2B 제휴와
+        억 단위 정산 시스템을 운영했습니다. 해피빈의 파트너십이 기업에는 ESG 성과를, 사회에는
+        실질적인 변화를 줄 수 있도록 기획부터 정산까지의 전 과정을 완결성 있게 운영합니다.
+    </p>
+
+    <div class="trust-banner">
+        <div class="trust-item"><span class="trust-icon">🔒</span><span class="trust-txt">Trust — 억 단위 정산 무결성 검증</span></div>
+        <div class="trust-item"><span class="trust-icon">📊</span><span class="trust-txt">Transparency — 데이터 기반 성과 보고</span></div>
+        <div class="trust-item"><span class="trust-icon">⚡</span><span class="trust-txt">Efficiency — 리드타임 57% 단축 경험</span></div>
+    </div>
+
+    <div class="kpi-row">
+        <div class="kpi">
+            <div class="kpi-badge">Trust</div>
+            <div class="kpi-v">오차 0건</div>
+            <div class="kpi-l">억 단위 정산 무결성<br>월 평균 억 단위 파트너 정산 데이터</div>
+            <div class="kpi-src">네이버클라우드 경험</div>
+        </div>
+        <div class="kpi">
+            <div class="kpi-badge">Efficiency</div>
+            <div class="kpi-v">57% 단축</div>
+            <div class="kpi-l">리드타임 단축<br>수기 의뢰 프로세스 전산화로 행정 효율 극대화</div>
+            <div class="kpi-src">분당서울대 경험</div>
+        </div>
+        <div class="kpi">
+            <div class="kpi-badge">Impact</div>
+            <div class="kpi-v">120%</div>
+            <div class="kpi-l">목표 달성률<br>국가 자살예방사업 총괄 및 성과 지표 초과 달성</div>
+            <div class="kpi-src">용인세브란스 경험</div>
+        </div>
+    </div>
+
+    <div class="g2">
+        <div class="panel">
+            <div class="label">B2B 파트너십 & 정산 운영</div>
+            <p style="font-size:0.82rem;color:var(--sub);line-height:1.75;">
+                네이버클라우드 CPS팀에서 앱마켓 파트너 6개사 제휴의 전 과정을 운영했습니다.
+                신규 파트너 조건 협의부터 월 정산 교차검증, 서비스 종료 고객사 End-to-End 대응까지
+                <strong style="color:var(--ink);">투명하고 오차 없는</strong> 정산 구조를 직접 구축했습니다.
+            </p>
+        </div>
+        <div class="panel">
+            <div class="label">CSR 현장 기획 & 국가 사업 총괄</div>
+            <p style="font-size:0.82rem;color:var(--sub);line-height:1.75;">
+                4개 의료기관에서 공익 캠페인 기획, 국가 자살예방사업 총괄, 안전망사업 정책 확장을
+                담당했습니다. <strong style="color:var(--ink);">예산 편성부터 성과 보고까지</strong>
+                캠페인의 완결성을 현장에서 직접 증명해 왔습니다.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 주요성과 ===== -->
+<section id="projects">
+    <div class="eyebrow">Key Projects</div>
+    <h1 class="h1">해피빈 캠페인 운영과 <span class="em">직결되는 성과.</span></h1>
+    <p class="lead">파트너십 정산, 공익 캠페인 설계, 프로세스 혁신, 정책 확장까지 — 현장에서 직접 완결한 경험입니다.</p>
+    <div id="proj-list"></div>
+</section>
+
+<!-- ===== 전문역량 ===== -->
+<section id="skills">
+    <div class="eyebrow">Capabilities</div>
+    <h1 class="h1">신뢰·투명성·효율이 <span class="em">쌓인 역량.</span></h1>
+    <p class="lead">CSR 현장 이해도, 데이터 검증 능력, 플랫폼 운영 숙련도를 하나의 사람이 갖추고 있습니다.</p>
+
+    <div class="g3" style="margin-bottom:1rem;">
+        <div class="skill-card">
+            <div class="skill-domain">CSR Domain</div>
+            <h4>공익 사업 전문성</h4>
+            <div class="skill-item"><span class="skill-dot"></span><span>의료사회복지사 1급 (국가 전문 자격)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>공익 사업 기획 및 예산 운영 (국고보조금 포함)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>임상 현장 이해도 — 의료진·환자·기관 3자 조율</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>캠페인 기획부터 결과 보고까지 완결성 확보</span></div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-domain">Data &amp; Transparency</div>
+            <h4>데이터 기반 운영</h4>
+            <div class="skill-item"><span class="skill-dot"></span><span>억 단위 정산 데이터 교차검증 (오차 0건 실적)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>Tableau 대시보드 — 사업 성과 시각화</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>Excel 정밀 분석 (SUMIF, VLOOKUP, 피벗테이블)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>Python 업무 자동화 (데이터 수집·정리)</span></div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-domain">Platform Operation</div>
+            <h4>플랫폼 운영 역량</h4>
+            <div class="skill-item"><span class="skill-dot"></span><span>네이버 내부 운영 도구 숙련도 (NCP, AI Studio)</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>다직군(기획/개발/법무) 협업 및 실무 조율</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>파트너 라이프사이클 전 단계 운영 경험</span></div>
+            <div class="skill-item"><span class="skill-dot"></span><span>SaaS 제품 운영 — 한/일 이중언어 관리</span></div>
+        </div>
+    </div>
+
+    <div class="label" style="margin-top:1.8rem;margin-bottom:0.6rem;">기술 스택</div>
+    <div class="panel">
+        <p style="font-size:0.82rem;color:var(--sub);line-height:1.85;">
+            <b style="color:var(--ink);">데이터 검증</b> — Excel (SUMIF, VLOOKUP, 피벗테이블) · Tableau · Ncloud Cost Dashboard<br>
+            <b style="color:var(--ink);">업무 자동화</b> — Python (Playwright, Pandas) · Git<br>
+            <b style="color:var(--ink);">플랫폼 운영</b> — 네이버웍스 Admin · NCP 운영 도구 · AI Studio<br>
+            <b style="color:var(--ink);">언어</b> — 한국어(모국어) · 영어(TOEIC 905) · 일본어(릴리즈노트 관리)
+        </p>
+    </div>
+</section>
+
+<!-- ===== 경력이력 ===== -->
+<section id="career">
+    <div class="eyebrow">Career</div>
+    <h1 class="h1">의료 사회공헌 현장에서<br><span class="em">IT 파트너십 운영</span>으로.</h1>
+    <p class="lead">신뢰를 기반으로 조직을 연결하고, 데이터로 운영을 개선해 온 7년의 경력입니다.</p>
+    <div class="tl" id="timeline"></div>
+</section>
+
+<!-- ===== 자격사항 ===== -->
+<section id="credentials">
+    <div class="eyebrow">Credentials</div>
+    <h1 class="h1">자격 · 학력.</h1>
+    <br>
+    <div class="g2">
+        <div>
+            <div class="label">자격</div>
+            <table>
+                <thead><tr><th>자격</th><th>분류</th><th>취득</th></tr></thead>
+                <tbody>
+                    <tr><td>사회복지사 1급</td><td>국가 자격</td><td>2019</td></tr>
+                    <tr><td>의료사회복지사</td><td>전문 자격</td><td>2020</td></tr>
+                    <tr><td>컴퓨터활용능력 2급</td><td>국가 자격</td><td>2017</td></tr>
+                    <tr><td>자동차운전면허 2종보통</td><td>국가 자격</td><td>2023</td></tr>
+                    <tr><td>TOEIC 905</td><td>어학</td><td>2023.05</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="label">학력</div>
+            <p style="font-size:0.82rem;color:var(--sub);line-height:1.8;">
+                가천대학교 운동재활복지학과<br>
+                <span style="font-size:0.72rem;color:var(--muted);">2015 – 2019 · GPA 4.05/4.5</span>
+            </p>
+            <br>
+            <div class="label">해외 교육</div>
+            <p style="font-size:0.82rem;color:var(--sub);line-height:1.8;">
+                하와이대학교 단기 수업 <span style="font-size:0.72rem;color:var(--muted);">(2016)</span><br>
+                Northwest University 단기 수업 <span style="font-size:0.72rem;color:var(--muted);">(2017)</span><br>
+                인터내셔널 프론티어 최우수상 · 2017
+            </p>
+            <br>
+            <div class="label">봉사</div>
+            <p style="font-size:0.82rem;color:var(--sub);">자원봉사 352시간 (2013 – 2024)<br>
+            <span style="font-size:0.72rem;color:var(--muted);">호스피스자원봉사자교육 수료 · 스카우트 은빛코끼리상</span></p>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+    <div>Data-driven CSR Portfolio | 김도연</div>
+    <div style="font-size:0.65rem;">© 2026</div>
+</div>
+</main>
+</div>
+
+<script>
+document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',()=>{
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        document.getElementById(a.dataset.section).classList.add('active');
+        window.scrollTo(0,0);
+    });
+});
+
+const career=[
+    {co:"네이버클라우드",org:"Cloud Product Synergy팀",s:"2025.07",e:"현재",
+     desc:"앱마켓 파트너 6개사 제휴 운영 — 신규 파트너 조건 협의(수수료·SSO·미터링), 월 정산 교차검증(오차 0건), 65개 고객사 서비스 종료 End-to-End 대응, 사내웍스 전 계열사 반기 정산",
+     tags:[{t:"파트너 제휴",c:"tag-g"},{t:"억 단위 정산",c:"tag-b"},{t:"B2B 운영",c:"tag-o"}],now:true},
+    {co:"용인세브란스병원",org:"사회사업팀",s:"2024.06",e:"2025.06",
+     desc:"국가 자살예방사업 총괄 — 사업목표 120% 초과 달성, 국고보조금 예산 편성·결산, 권역 심포지엄 발표, 사례관리 동의율 71.7%(전국 평균 66.2% 상회), 매뉴얼 제작·유관기관 배포",
+     tags:[{t:"국가 공익사업",c:"tag-g"},{t:"예산 운영",c:"tag-b"},{t:"성과 보고",c:"tag-p"}],now:false},
+    {co:"분당서울대학교병원",org:"의료사회복지팀",s:"2023.01",e:"2024.05",
+     desc:"취약계층 자동의뢰 프로세스 기획·구축 — 5개 부서 협업으로 심사 대기 리드타임 57% 단축(7일→3일), 수기 업무 전산화, 범정부 클라우드 전환사업 현장 대응",
+     tags:[{t:"프로세스 혁신",c:"tag-p"},{t:"IT 전산화",c:"tag-g"},{t:"다부서 협업",c:"tag-b"}],now:false},
+    {co:"서울특별시보라매병원",org:"의료사회복지팀",s:"2020.09",e:"2022.12",
+     desc:"서울시 안전망병원 사업 총괄 — 임상 사례 근거로 서울시·보건복지부 설득, 치주질환까지 지원 범위 확대. 신촌세브란스 파견 기간 소원트리 사회공헌 캠페인 운영",
+     tags:[{t:"공공사업",c:"tag-g"},{t:"정책 확장",c:"tag-p"},{t:"사회공헌",c:"tag-o"}],now:false},
+    {co:"가천대길병원",org:"사회사업팀",s:"2019.03",e:"2020.06",
+     desc:"의료사회복지 임상 수련 — 전국 수련기관 평가 1위, 의료사회복지사 자격 취득",
+     tags:[{t:"임상 수련",c:"tag-g"}],now:false},
+];
+
+const tl=document.getElementById('timeline');
+career.forEach(c=>{
+    const tags=c.tags.map(t=>`<span class="tag ${t.c}">${t.t}</span>`).join('');
+    tl.innerHTML+=`
+    <div class="tl-i ${c.now?'now':''}">
+        <div class="tl-c">
+            <div class="tl-h">
+                <div><div class="tl-co">${c.co}</div><div class="tl-org">${c.org}</div></div>
+                <div class="tl-p">${c.s} – ${c.e}</div>
+            </div>
+            <div class="tl-desc">${c.desc}</div>
+            <div class="tl-tags">${tags}</div>
+        </div>
+    </div>`;
+});
+
+const projects=[
+    {n:"01",where:"네이버클라우드",title:"B2B 파트너십 정산 및 제휴 라이프사이클 관리",
+     sub:"6개 앱마켓 파트너의 정산 구조를 일원화하고, 서비스 종료까지 전 과정을 오차 없이 운영했습니다.",
+     bg:"앱마켓 파트너별로 상이한 과금 구조(미리캔버스, 카택스, 유밥, 매직소프트 등)가 혼재했고, 신규 제휴 조건 설계부터 서비스 종료까지 각 단계마다 파트너·내부 유관부서·법무 간 정밀한 조율이 필요했습니다.",
+     how:"매직소프트 신규 제휴 시 수수료·일별 미터링·SSO/OIDC 조건을 직접 설계했습니다. Ncloud Cost Dashboard 기반 교차검증으로 억 단위 정산 오차를 0건으로 유지하고, 투디·미리캔버스 종료 시 65개 고객사에 3차 안내를 설계·실행하며 법무 근거를 확보했습니다.",
+     results:["65개 고객사 서비스 종료 안내 — 클레임 0건","월 평균 억 단위 파트너 정산 오차 0건","신규 제휴 조건(수수료·미터링·SSO) 설계 완료"]},
+    {n:"02",where:"용인세브란스병원",title:"공익 캠페인 설계 및 국가 사업 총괄",
+     sub:"국고보조금 자살예방사업의 기획·예산 편성·운영·결과 보고 전 과정을 담당하여 목표를 120% 초과 달성했습니다.",
+     bg:"응급실 자살시도자는 퇴원 후 지역사회 연결이 단절되면 재시도 위험이 급증하는 고위험군입니다. 국가 사업 성과 목표 달성과 현장 고위험군의 사후관리 체계 구축을 동시에 완결해야 했습니다.",
+     how:"응급의학과·정신건강의학과와 협업해 고위험군 선별 체계를 제안하고, 국고보조금 예산 편성·집행·결산 전반을 담당했습니다. 사례관리 전 과정을 총괄하며 권역 심포지엄에서 성과를 발표하고 매뉴얼을 유관기관에 배포했습니다.",
+     results:["사업 목표 120% 초과 달성","사례관리 동의율 71.7% (전국 평균 66.2% 상회)","매뉴얼 제작 및 유관기관 배포 완료"]},
+    {n:"03",where:"분당서울대학교병원",title:"IT 기반 프로세스 혁신 — 리드타임 57% 단축",
+     sub:"수기 의뢰 업무를 전산화하여 지원 대상자 발굴 리드타임을 7일에서 3일로 단축했습니다.",
+     bg:"수기 의뢰 방식으로 심사 대기 평균 7일이 소요됐고, 의료진 행정 부담 가중과 지원 대상자 누락이 구조적으로 반복됐습니다. 입원 시점과 지원 연계 간의 공백이 취약계층 수혜 기회를 놓치게 만들었습니다.",
+     how:"입원 오더 발생 시 자동 의뢰되는 프로세스를 제안하고, 의료진·원무팀·의료정보팀·사회복지팀·간호부 5개 부서의 이해관계를 조율하며 전산화를 주도했습니다. 데이터 분석을 통해 의뢰 누락 구간을 특정하고 개선 근거를 만들었습니다.",
+     results:["심사 대기 리드타임 57% 단축 (7일→3일)","지원 대상자 자동 발굴 체계 구축","병원 공식 표준 프로세스로 현재까지 운영 중"]},
+    {n:"04",where:"서울특별시보라매병원",title:"현장 근거 기반 지원 정책 확장",
+     sub:"임상 사례를 데이터 근거로 삼아 서울시·보건복지부를 설득하고 사회공헌 지원 범위를 확대했습니다.",
+     bg:"서울시 안전망병원 지원사업은 응급·수술 등 중증질환 중심으로 제한되어 있었습니다. 중증 장애인·노인의 치주 질환은 전신 건강과 직결됨에도 지원 제외 상태였고, 이를 바꾸기 위해 현장 근거와 정책 설득이 필요했습니다.",
+     how:"담당 의료진과 함께 임상 사례와 의학적 소견을 체계적으로 정리하고, 서울시청·보건복지부를 대상으로 지원 필요성을 제안했습니다. 신규 범위 적용의 현장 타당성을 검증하는 테스트베드 역할을 수행하며 정책 변화를 이끌었습니다.",
+     results:["치주 질환까지 안전망 지원 범위 확대 성공","현장 근거 기반 정책 개선 사례로 기록","이해관계자(의료진·행정·정부) 설득 프로세스 완결"]},
+];
+
+const pl=document.getElementById('proj-list');
+projects.forEach(p=>{
+    const li=p.results.map(r=>`<li>${r}</li>`).join('');
+    pl.innerHTML+=`
+    <div class="proj">
+        <span class="proj-badge">${p.n}</span><span class="proj-where">${p.where}</span>
+        <div class="proj-t">${p.title}</div>
+        <div class="proj-s">${p.sub}</div>
+        <div class="proj-grid">
+            <div><div class="label">배경</div><p>${p.bg}</p></div>
+            <div><div class="label">접근</div><p>${p.how}</p></div>
+            <div><div class="label">성과</div><ul>${li}</ul></div>
+        </div>
+    </div>`;
+});
+</script>
+</body>
+</html>
