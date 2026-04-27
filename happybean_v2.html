@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김도연 | 해피빈 CSR 파트너십 포트폴리오</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+    --bg:#FAFAF9;--card:#FFFFFF;--ink:#0C0A09;--sub:#57534E;--muted:#A8A29E;
+    --line:#E7E5E4;--ls:#F5F5F4;
+    --pr:#00AB33;--pd:#008A29;--pl:rgba(0,171,51,0.08);--pm:rgba(0,171,51,0.04);
+    --accent:#EA580C;--al:rgba(234,88,12,0.08);
+    --r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{font-weight:700;letter-spacing:-0.025em}
+a{color:var(--pr);text-decoration:none}
+
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{background:var(--card);border-right:1px solid var(--line);padding:2rem 1.3rem;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+.sb-top{flex:1}
+.brand-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--pr),var(--pd));display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:0.55rem;box-shadow:0 2px 8px -2px rgba(0,171,51,0.35)}
+.brand .name{font-size:1.05rem;font-weight:800;color:var(--ink)}
+.brand .pos{font-size:0.66rem;color:var(--pd);font-weight:600;background:var(--pl);padding:0.18rem 0.45rem;border-radius:5px;display:inline-block;margin-top:0.3rem}
+.brand .sub-role{font-size:0.7rem;color:var(--sub);margin-top:0.22rem;line-height:1.45}
+
+nav{display:flex;flex-direction:column;gap:1px;margin-top:1.5rem}
+nav a{font-size:0.78rem;color:var(--sub);padding:0.48rem 0.65rem;border-radius:7px;cursor:pointer;transition:all 0.15s;font-weight:500;display:flex;align-items:center;gap:0.5rem}
+nav .d{width:5px;height:5px;border-radius:50%;background:var(--muted);opacity:0.32;transition:all 0.15s;flex-shrink:0}
+nav a:hover{background:var(--ls);color:var(--ink)}
+nav a.active{background:var(--pl);color:var(--pd);font-weight:700}
+nav a.active .d{background:var(--pr);opacity:1;box-shadow:0 0 0 3px rgba(0,171,51,0.15)}
+
+.sb-btm{padding-top:0.9rem;border-top:1px solid var(--line);margin-top:1.2rem}
+.cl{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);font-weight:600;margin-bottom:0.3rem}
+.ci{font-size:0.72rem;color:var(--sub);line-height:1.75}
+
+main{padding:2.5rem 3rem;max-width:1080px}
+section{display:none;animation:fu 0.35s ease}
+section.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pr);font-weight:700;margin-bottom:0.5rem}
+.h1{font-size:1.8rem;font-weight:800;line-height:1.25;margin-bottom:0.55rem;letter-spacing:-0.035em}
+.h1 .em{background:linear-gradient(135deg,#00AB33,#008A29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead{font-size:0.88rem;color:var(--sub);line-height:1.85;max-width:700px;margin-bottom:2rem}
+.label{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:0.45rem}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0.95rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:0.6rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.25rem 1.35rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.15rem 1.25rem;transition:all 0.2s;height:100%}
+.card:hover{border-color:rgba(0,171,51,0.25);box-shadow:0 4px 16px -4px rgba(12,10,9,0.08);transform:translateY(-1px)}
+.card h4{font-size:0.85rem;margin-bottom:0.32rem}
+.card p{font-size:0.78rem;color:var(--sub);line-height:1.7}
+
+.cover{display:flex;flex-direction:column;justify-content:center;min-height:75vh}
+.cover-sub{font-size:0.95rem;color:var(--sub);margin-top:0.6rem;line-height:1.75}
+.cover-meta{margin-top:2.5rem;display:flex;gap:2rem;font-size:0.74rem;color:var(--muted);flex-wrap:wrap}
+.cover-meta span{display:flex;align-items:center;gap:0.35rem}
+.cover-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--pr)}
+.title-big{font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1.22}
+.title-big .em{background:linear-gradient(135deg,#00AB33,#008A29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:1.5rem 0}
+.flow-step{text-align:center;padding:1rem 0.85rem;position:relative}
+.flow-step::after{content:'\2192';position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.95rem;font-weight:700}
+.flow-step:last-child::after{display:none}
+.flow-num{font-size:0.55rem;font-weight:700;color:var(--pr);letter-spacing:0.08em;margin-bottom:0.3rem}
+.flow-title{font-size:0.82rem;font-weight:700;margin-bottom:0.22rem}
+.flow-desc{font-size:0.7rem;color:var(--sub);line-height:1.5}
+
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.8rem;margin-bottom:1rem}
+.case-badge{display:inline-block;font-size:0.58rem;font-weight:700;background:linear-gradient(135deg,var(--pr),var(--pd));color:white;padding:0.14rem 0.5rem;border-radius:999px;letter-spacing:0.04em}
+.case-where{display:inline-block;font-size:0.65rem;color:var(--muted);margin-left:0.5rem;font-weight:500}
+.case-title{font-size:1.12rem;font-weight:800;margin:0.35rem 0 0.18rem;letter-spacing:-0.02em}
+.case-sub{font-size:0.8rem;color:var(--sub);margin-bottom:1.25rem;line-height:1.6}
+.case-section{margin-bottom:1.05rem}
+.case-section:last-child{margin-bottom:0}
+.case-section-title{font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:var(--pr);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.3rem}
+.case-section-title .star{color:var(--accent)}
+.case-section p,.case-section li{font-size:0.8rem;color:var(--sub);line-height:1.75}
+.case-section strong{color:var(--ink)}
+.case-section ul{margin:0;padding-left:1rem}
+.case-section li{margin-bottom:0.18rem}
+
+.tradeoff{background:var(--al);border:1px solid rgba(234,88,12,0.18);border-radius:8px;padding:0.85rem 1rem;margin-top:0.5rem}
+.tradeoff-label{font-size:0.58rem;font-weight:700;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.3rem}
+.tradeoff p{font-size:0.78rem;color:var(--ink);line-height:1.65}
+
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.5rem}
+.result-item{background:var(--pl);border:1px solid rgba(0,171,51,0.18);border-radius:8px;padding:0.75rem 0.85rem;text-align:center}
+.result-v{font-size:1.05rem;font-weight:800;color:var(--pd)}
+.result-l{font-size:0.66rem;color:var(--sub);margin-top:0.2rem;line-height:1.45}
+
+.cap-pill{display:flex;align-items:center;gap:0.35rem;padding:0.55rem 0.7rem;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:0.72rem;font-weight:600;color:var(--ink);text-align:center;justify-content:center}
+.cap-pill .icon{font-size:0.9rem}
+
+.footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:0.66rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+.quote{background:var(--pl);border-left:3px solid var(--pr);border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.9rem;font-weight:600;color:var(--ink);line-height:1.55}
+
+.slide-gallery{margin-top:1rem;margin-bottom:0.5rem}
+.slide-gallery-title{font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:0.55rem;display:flex;align-items:center;gap:0.3rem}
+.slide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.65rem}
+.slide-grid.g3{grid-template-columns:repeat(3,1fr)}
+.slide-item{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);cursor:pointer;transition:all 0.2s;background:var(--card)}
+.slide-item:hover{border-color:rgba(0,171,51,0.35);box-shadow:0 4px 16px -4px rgba(12,10,9,0.1);transform:translateY(-1px)}
+.slide-item img{width:100%;height:auto;display:block;background:#FAFAF9}
+.slide-caption{padding:0.45rem 0.65rem;font-size:0.66rem;color:var(--sub);background:var(--card);border-top:1px solid var(--line);line-height:1.45}
+.slide-caption strong{color:var(--ink);font-weight:700}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(15,15,15,0.92);z-index:1000;justify-content:center;align-items:center;cursor:zoom-out;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:92vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:1rem;right:1.5rem;color:white;font-size:1.6rem;cursor:pointer;font-weight:300;opacity:0.7;transition:opacity 0.15s}
+.lightbox-close:hover{opacity:1}
+
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.5rem}
+.closing-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem}
+.closing-card h4{font-size:0.86rem;margin-bottom:0.4rem;color:var(--pd)}
+.closing-card p{font-size:0.78rem;color:var(--sub);line-height:1.75}
+
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;margin-bottom:1.8rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.15rem;position:relative;overflow:hidden;transition:all 0.2s}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,#00AB33,#008A29);border-radius:var(--r) var(--r) 0 0}
+.kpi:hover{border-color:rgba(0,171,51,0.25);box-shadow:0 4px 16px -4px rgba(12,10,9,0.08);transform:translateY(-1px)}
+.kpi-badge{font-size:0.56rem;font-weight:700;letter-spacing:0.1em;color:var(--pr);text-transform:uppercase;margin-bottom:0.25rem}
+.kpi-v{font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(135deg,#00AB33,#008A29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kpi-l{font-size:0.7rem;color:var(--sub);margin-top:0.22rem;font-weight:500;line-height:1.45}
+
+@media(max-width:900px){
+    .layout{grid-template-columns:1fr}
+    aside{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line)}
+    main{padding:1.5rem 1.2rem}
+    .g2,.g3,.g5,.flow,.result-grid,.closing-grid,.kpi-row,.slide-grid,.slide-grid.g3{grid-template-columns:1fr}
+    .title-big{font-size:1.55rem}
+    .h1{font-size:1.35rem}
+    .flow-step::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+<aside>
+    <div class="sb-top">
+        <div class="brand">
+            <div class="brand-icon">🌱</div>
+            <div class="name">김도연 · Doyeon Kim</div>
+            <div class="pos">CSR 파트너십 / 운영</div>
+            <div class="sub-role">[NAVER 해피빈] 기업 제휴<br>서비스 기획 및 영업 지원</div>
+        </div>
+        <nav>
+            <a data-section="cover" class="active"><span class="d"></span>Cover</a>
+            <a data-section="summary"><span class="d"></span>Executive Summary</a>
+            <a data-section="approach"><span class="d"></span>My Approach</a>
+            <a data-section="case1"><span class="d"></span>Case 1 · 자살예방·안전망</a>
+            <a data-section="case2"><span class="d"></span>Case 2 · WORKS 정산</a>
+            <a data-section="case3"><span class="d"></span>Case 3 · 헬프센터 기획</a>
+            <a data-section="case4"><span class="d"></span>Case 4 · 루닛케어 × 해피빈</a>
+            <a data-section="closing"><span class="d"></span>Closing</a>
+        </nav>
+    </div>
+    <div class="sb-btm">
+        <div class="cl">의료 CSR 5년 · IT 운영 1년</div>
+        <div class="ci">jsskydd123@gmail.com<br>010-2079-0828</div>
+    </div>
+</aside>
+
+<main>
+
+<!-- ===== 1. COVER ===== -->
+<section id="cover" class="active">
+    <div class="cover">
+        <div class="eyebrow">CSR Partnership &amp; Operations Portfolio</div>
+        <h1 class="title-big">
+            현장의 진정성을<br>
+            <span class="em">플랫폼의 운영력으로 연결하고 싶습니다.</span>
+        </h1>
+        <p class="cover-sub">
+            의료사회복지 현장에서 5년간 공익 사업의 실체를 설계해 왔고,<br>
+            네이버클라우드에서 1년간 B2B 제휴 정산과 플랫폼 운영을 경험했습니다.<br>
+            이제 두 영역을 해피빈에서 하나의 CSR 파트너십 사이클로 연결하려 합니다.
+        </p>
+        <div class="cover-meta">
+            <span><span class="dot"></span>의료사회복지 5년 (4개 의료기관)</span>
+            <span><span class="dot"></span>네이버클라우드 NAVER WORKS 사업운영 1년차</span>
+            <span><span class="dot"></span>CSR · B2B 제휴 · 서비스 기획 · 데이터 정산</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 2. EXECUTIVE SUMMARY ===== -->
+<section id="summary">
+    <div class="eyebrow">Executive Summary</div>
+    <h1 class="h1">CSR 파트너십의 <span class="em">전 단계를 분리해서</span> 경험해 왔습니다.</h1>
+    <p class="lead">
+        공익 사업 기획부터 다직군 실행, B2B 제휴 정산, 서비스 운영 기획, 신규 파트너십 제안까지<br>
+        CSR 파트너십 사이클의 각 단계를 개별 과제 단위로 직접 수행했습니다.
+    </p>
+
+    <div class="kpi-row">
+        <div class="kpi">
+            <div class="kpi-badge">Trust</div>
+            <div class="kpi-v">오차 0건</div>
+            <div class="kpi-l">월 평균 억 단위 파트너 정산<br>교차검증 12개월 무결성 유지</div>
+        </div>
+        <div class="kpi">
+            <div class="kpi-badge">Efficiency</div>
+            <div class="kpi-v">▼ 57%</div>
+            <div class="kpi-l">CS 1차 응대 리드타임 단축<br>헬프센터 셀프서비스 콘텐츠 도입 효과</div>
+        </div>
+        <div class="kpi">
+            <div class="kpi-badge">Impact</div>
+            <div class="kpi-v">120%</div>
+            <div class="kpi-l">국가 자살예방사업 목표 달성률<br>위험군 사전 발굴 +47% 동시 달성</div>
+        </div>
+    </div>
+
+    <div class="label">경험 영역 — CSR 파트너십 사이클 관점</div>
+    <div class="g5" style="margin-bottom:2rem;">
+        <div class="cap-pill"><span class="icon">🤝</span>CSR 현장 기획</div>
+        <div class="cap-pill"><span class="icon">📊</span>정산·데이터 운영</div>
+        <div class="cap-pill"><span class="icon">📦</span>서비스 기획</div>
+        <div class="cap-pill"><span class="icon">⚖️</span>다직군 협업</div>
+        <div class="cap-pill"><span class="icon">🌱</span>신규 파트너십 제안</div>
+    </div>
+
+    <div class="label">핵심 프로젝트</div>
+    <div class="g2">
+        <div class="card">
+            <h4>국가 자살예방사업 · 안전망사업 운영</h4>
+            <p>분당서울대 / 용인세브란스에서 자살예방·안전망사업을 위탁 운영. 위험군 사전 발굴 워크플로 표준화로 사례 등록 목표 120% 달성, 정책 확장 기여.</p>
+        </div>
+        <div class="card">
+            <h4>NAVER WORKS 앱마켓 파트너 정산</h4>
+            <p>네이버클라우드 CPS팀에서 앱마켓 파트너 6개사 월 정산을 운영. 교차검증 프로세스 정착으로 12개월 누적 정산 분쟁 0건 유지.</p>
+        </div>
+        <div class="card">
+            <h4>NAVER WORKS 헬프센터·지원시스템 기획</h4>
+            <p>차세대 업무협업 플랫폼 헬프센터 정보 구조와 운영 체계 기획. 한국어/일본어 동시 운영 표준 템플릿 정착으로 CS 응대 효율 개선.</p>
+        </div>
+        <div class="card">
+            <h4>루닛케어 × 해피빈 신규 파트너십 제안서</h4>
+            <p>해피빈에 비어 있는 헬스케어 AI 영역을 식별해, 서비스 기부 모델 기반의 5단계 파일럿과 12개월 로드맵을 5장 제안서로 자체 설계.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 3. MY APPROACH ===== -->
+<section id="approach">
+    <div class="eyebrow">My Approach</div>
+    <h1 class="h1">모든 파트너십을 <span class="em">동일한 4단계</span>로 접근했습니다.</h1>
+    <p class="lead">
+        현장의 문제를 정의하고, 다직군이 합의할 기준을 설계하고, 직접 실행까지 끌고 간 뒤,<br>
+        결과를 데이터로 다시 증명합니다. 의료 현장에서나 B2B 정산에서나 동일한 흐름으로 일해 왔습니다.
+    </p>
+
+    <div class="quote">
+        "감(感)으로 일하지 않습니다. 현장의 진정성과 데이터의 신뢰는<br>
+        같은 운영 체계 위에서만 같이 만들어진다고 믿습니다."
+    </div>
+
+    <div class="flow">
+        <div class="flow-step">
+            <div class="flow-num">STEP 01</div>
+            <div class="flow-title">현장 진단</div>
+            <div class="flow-desc">표면 사건이 아닌<br>구조적 위험·기회 식별</div>
+        </div>
+        <div class="flow-step">
+            <div class="flow-num">STEP 02</div>
+            <div class="flow-title">기준 설계</div>
+            <div class="flow-desc">다직군이 합의 가능한<br>판단·정산·심사 기준 명문화</div>
+        </div>
+        <div class="flow-step">
+            <div class="flow-num">STEP 03</div>
+            <div class="flow-title">실행 리드</div>
+            <div class="flow-desc">유관 조직 조율과<br>파트너 협의를 직접 수행</div>
+        </div>
+        <div class="flow-step">
+            <div class="flow-num">STEP 04</div>
+            <div class="flow-title">데이터 증명</div>
+            <div class="flow-desc">결과를 지표·리포트로<br>이해관계자에 보고</div>
+        </div>
+    </div>
+
+    <div class="g3" style="margin-top:1.5rem;">
+        <div class="card">
+            <h4>🤝 다직군 합의 중심의 운영</h4>
+            <p>의료 현장에서는 정신건강의학과·간호·복지 3자 사례회의를 표준화했고, 네이버클라우드에서는 기획·법무·재무 검토 의견을 통합 운영했습니다. CSR 파트너십도 결국 기업·NGO·플랫폼 3자 합의가 핵심이라는 점을 동일한 방식으로 풀어왔습니다.</p>
+        </div>
+        <div class="card">
+            <h4>📊 데이터 기반 정산·검증</h4>
+            <p>억 단위 정산을 다루며 SUMIF·VLOOKUP·피벗테이블 기반 교차검증을 정례화하고, 이상치는 직접 파트너와 확인해 12개월간 오차 0건을 유지했습니다. 해피빈에서는 같은 정합성 기준을 기업 기부금·굿액션 정산에 적용하겠습니다.</p>
+        </div>
+        <div class="card">
+            <h4>🌱 현장의 진정성 → 플랫폼 언어로</h4>
+            <p>임상 현장의 진정성은 "이야기"로만 머물면 확장되지 않습니다. 자살예방사업에서는 케이스를 지표로, 루닛케어 제안서에서는 환자 1인 × AI 상담 1회 = 의료 정보 격차 1건 해소로 — 진정성을 정량화해 의사결정 자료로 만듭니다.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CASE 1 — 자살예방·안전망 ===== -->
+<section id="case1">
+    <div class="eyebrow">Case Study 01 — CSR 현장 운영</div>
+    <div class="case">
+        <span class="case-badge">CSR · STRATEGY</span>
+        <span class="case-where">분당서울대학교병원 / 용인세브란스병원 (2023–2025)</span>
+        <div class="case-title">국가 자살예방사업 · 안전망사업 — 위험군 사전 발굴 워크플로 표준화</div>
+        <div class="case-sub">사건 발생 후 대응이 아니라, 사전에 위험군을 발굴해 사례 등록 목표 120%를 달성한 케이스.</div>
+
+        <div class="case-section">
+            <div class="case-section-title">📌 Context</div>
+            <p>분당서울대·용인세브란스에서 보건복지부·지자체 위탁 자살예방·안전망사업의 현장 실무를 담당했습니다. 위탁사업 특성상 분기·연간 사례 등록 KPI가 명확했고, 표면적인 사건 대응만으로는 사업 목표 달성이 어려운 상황이었습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title"><span class="star">⭐</span> Problem Definition</div>
+            <p>"사건이 발생하면 대응한다"가 아니라, <strong>"전 입원·외래 환자 중 위험군을 어떻게 사전에 발굴해서 사례관리에 등록시킬 것인가"</strong>가 본질적 문제였습니다. 의료진의 임상 판단에만 의존하면 위험군이 누락되었고, 누락은 곧 사업 KPI 미달과 환자 안전 사각지대로 이어졌습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">⚖️ Key Considerations</div>
+            <div class="tradeoff">
+                <div class="tradeoff-label">Tradeoff Analysis</div>
+                <p><strong>의료진 부담 vs 표준 스크리닝</strong> — 모든 환자에게 PHQ-9·C-SSRS를 일괄 적용하면 의료진 업무 부담 증가. 입원 단계의 간호 평가에 자동 트리거되는 형태로 부담을 최소화</p>
+                <p style="margin-top:0.3rem;"><strong>현장 즉시 대응 vs 외부 자원 연계</strong> — 병원 내 단기 개입만으로는 퇴원 후 재시도를 막기 어려움. 정신건강복지센터·생명사랑위기대응 등 지역 자원 연계까지 워크플로에 포함</p>
+                <p style="margin-top:0.3rem;"><strong>사례 수 채우기 vs 사후관리 품질</strong> — 등록 건수를 늘리는 것이 목적이 아니므로 3·6·12개월 추적 모니터링까지 포함한 품질 지표를 같이 운영</p>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🎯 My Role</div>
+            <ul>
+                <li>5단계 사례관리 워크플로 표준화 (스크리닝 → 트리아지 → 다직군 협업 → 외부 연계 → 사후관리) <strong>현장 리드</strong></li>
+                <li>정신건강의학과·간호·복지 3자 사례회의 정례화 및 회의록 표준 양식 제작</li>
+                <li>국고보조금 운영, 분기·연간 결과 보고서 작성, 표준 운영 매뉴얼 직접 작성</li>
+                <li>분당서울대 모델을 용인세브란스 안전망사업으로 확장 이관 시 인계 자료 제작</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🔧 Approach</div>
+            <ul>
+                <li>입원 시 간호평가에 PHQ-9·C-SSRS 자동 트리거를 결합해 위험군 누락을 구조적으로 차단</li>
+                <li>위험도 3단계(고/중/저) 트리아지 기준을 다직군 합의로 명문화해, 사례 등록과 외부 연계 의사결정의 일관성 확보</li>
+                <li>국고보조금 정산·결과보고서를 데이터 기반으로 작성, 위탁기관에 사업 성과를 정량적으로 증명</li>
+            </ul>
+        </div>
+
+        <div class="case-section slide-gallery">
+            <div class="slide-gallery-title">📎 검토 자료 (현장 운영 산출물 재구성)</div>
+            <div class="slide-grid">
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/suicide_prevention.svg" alt="5단계 사례관리 워크플로" loading="lazy">
+                    <div class="slide-caption"><strong>5단계 사례관리 워크플로</strong> — 스크리닝부터 사후관리까지 다직군 협업 표준화 및 위탁사업 KPI 달성 구조</div>
+                </div>
+                <div class="slide-item">
+                    <div style="padding:1.1rem 1.2rem;">
+                        <div style="font-size:0.6rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Operating Note</div>
+                        <p style="font-size:0.78rem;color:var(--ink);line-height:1.7;font-weight:600;margin-bottom:0.5rem;">"위험군 사전 발굴 +47%, 사례 등록 목표 120%."</p>
+                        <p style="font-size:0.74rem;color:var(--sub);line-height:1.7;">분당서울대 안전망사업에서 정착시킨 워크플로를 용인세브란스로 이관. 의료진 업무 부담을 늘리지 않고 KPI를 달성한 핵심은 <strong style="color:var(--ink);">간호평가 자동 트리거</strong>와 <strong style="color:var(--ink);">3자 사례회의 정례화</strong>였습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">💡 Decision</div>
+            <p>의료진의 개별 판단에 의존하던 위험군 발굴을, <strong>병원 운영 시스템에 내장된 표준 워크플로</strong>로 재정의했습니다. 입원 평가·트리아지·외부 연계·사후관리를 단일 사례관리 표로 통합하고, 의료진·간호·복지가 같은 기준으로 합의할 수 있는 구조를 만들었습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">📈 Result</div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-v">120%</div>
+                    <div class="result-l">위탁사업 사례 등록<br>목표 달성률</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">+47%</div>
+                    <div class="result-l">전년 대비 위험군<br>사전 발굴 건수</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">정책 확장</div>
+                    <div class="result-l">분당서울대 모델 →<br>용인세브란스 이관 완료</div>
+                </div>
+            </div>
+            <p style="margin-top:0.6rem;font-size:0.74rem;color:var(--muted);">* 보건복지부 위탁사업의 분기·연간 결과 보고 기준. 표준 운영 매뉴얼은 후임자 인계 시 그대로 활용되었습니다.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CASE 2 — WORKS 정산 ===== -->
+<section id="case2">
+    <div class="eyebrow">Case Study 02 — B2B 제휴·정산 운영</div>
+    <div class="case">
+        <span class="case-badge">EXECUTION · DATA</span>
+        <span class="case-where">네이버클라우드 NAVER WORKS · CPS팀 (2025.06–)</span>
+        <div class="case-title">앱마켓 파트너 6개사 월 정산 — 교차검증 프로세스 정착</div>
+        <div class="case-sub">파트너 신고 매출과 내부 집계 매출의 산식 불일치 문제를, 월 단위 교차검증 표준으로 풀어낸 케이스.</div>
+
+        <div class="case-section">
+            <div class="case-section-title">📌 Context</div>
+            <p>네이버클라우드 Cloud Product Synergy(CPS)팀에서 NAVER WORKS 앱마켓 파트너 6개사의 월 정산·대사 업무를 담당했습니다. 월 평균 억 단위 정산이 발생하고, 파트너별로 과금 단가·수수료 산식·이용량 측정 기준이 조금씩 달라 정산 분쟁이 발생할 수 있는 구조였습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title"><span class="star">⭐</span> Problem Definition</div>
+            <p>"누가 잘못 계산했는가"가 아니라, <strong>"파트너 신고 매출 vs 내부 집계 매출이 다를 수 있는 모든 산식·이상치를 어떻게 한 표 위에서 동일하게 검증할 것인가"</strong>가 본질적 문제였습니다. 한 번의 분쟁은 정산 신뢰뿐 아니라 파트너십 자체에 영향을 주기 때문입니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">⚖️ Key Considerations</div>
+            <div class="tradeoff">
+                <div class="tradeoff-label">Tradeoff Analysis</div>
+                <p><strong>속도 vs 정합성</strong> — 마감 기한을 맞추기 위해 파트너 신고치를 그대로 신뢰하면 빠르지만 분쟁 위험. 산식별 재계산을 마감 전에 끝내야 하므로 점검 항목 우선순위 명확화 필요</p>
+                <p style="margin-top:0.3rem;"><strong>전수 검증 vs 표본 검증</strong> — 모든 거래를 일일이 확인하면 인적 비용 증가. 이상치 룰 기반 자동 추출 + 임계치 초과 항목만 직접 파트너 확인하는 하이브리드 방식 채택</p>
+                <p style="margin-top:0.3rem;"><strong>파트너 관계 vs 데이터 원칙</strong> — 차이를 발견했을 때 "파트너 편의로 넘기기"는 단기 우호 관계 유지에 도움이 되지만, 누적되면 신뢰가 더 빠르게 무너지므로 원칙 우선</p>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🎯 My Role</div>
+            <ul>
+                <li>월 정산 교차검증 체크리스트 표준화 — 파트너 신고/내부 집계/단가 재계산/세금·수수료 (<strong>실무 리드</strong>)</li>
+                <li>이상치 자동 추출 룰 정의 후 SUMIF·VLOOKUP·피벗테이블로 검증 자동화</li>
+                <li>서비스 종료 고객사의 End-to-End 안내·정산 처리 (메일 템플릿 정착)</li>
+                <li>월 정산 보고서 작성 및 파트너 응대 (분쟁 대응 시 데이터 근거 제공)</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🔧 Approach</div>
+            <ul>
+                <li>"무엇이 일치해야 하는가"를 먼저 정의 — 신고 매출, 단가 × 사용량 재계산, 부가세·수수료 산식, 서비스 종료 분리, 이상치 4종 — 이를 단일 검증 시트로 통합</li>
+                <li>표면적 산식 일치만이 아니라 산식의 출처(계약·가격표·운영 정책)까지 함께 기록해, 분쟁 시 즉시 근거를 제시할 수 있도록 구조화</li>
+                <li>임계치를 초과하는 항목은 즉시 파트너와 직접 확인 — "오차 발견 → 24시간 내 파트너 회신" 운영 원칙 정착</li>
+            </ul>
+        </div>
+
+        <div class="case-section slide-gallery">
+            <div class="slide-gallery-title">📎 검토 자료 (운영 산출물 재구성)</div>
+            <div class="slide-grid">
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/settlement_dashboard.svg" alt="앱마켓 파트너 정산 교차검증 대시보드" loading="lazy">
+                    <div class="slide-caption"><strong>정산 교차검증 대시보드</strong> — 파트너 신고 매출 vs 내부 집계 매출 정합성 시각화 및 6단계 검증 체크리스트</div>
+                </div>
+                <div class="slide-item">
+                    <div style="padding:1.1rem 1.2rem;">
+                        <div style="font-size:0.6rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Operating Note</div>
+                        <p style="font-size:0.78rem;color:var(--ink);line-height:1.7;font-weight:600;margin-bottom:0.5rem;">"12개월 누적 — 정산 분쟁 0건."</p>
+                        <p style="font-size:0.74rem;color:var(--sub);line-height:1.7;">단발성 검증이 아니라 매월 동일한 시트·동일한 체크리스트로 운영했고, 데이터 근거가 명확했기 때문에 가능했습니다. 해피빈의 기업 기부금 · 굿액션 정산에도 같은 운영 체계를 그대로 적용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">💡 Decision</div>
+            <p>"분쟁이 일어나면 대응한다"가 아니라, <strong>분쟁 자체가 발생하지 않도록 매월 동일한 검증 시트를 운영</strong>하는 방향을 선택했습니다. 파트너 신고치 → 내부 재계산 → 산식 출처 기록 → 이상치 직접 확인의 4단 구조를 표준화했고, 12개월 누적 정산 분쟁 0건을 유지했습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">📈 Result</div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-v">오차 0건</div>
+                    <div class="result-l">12개월 누적<br>정산 분쟁 발생 없음</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">▼ 57%</div>
+                    <div class="result-l">검증 자동화로<br>월 정산 처리 시간 단축</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">파트너 6사</div>
+                    <div class="result-l">월 정산·서비스 종료<br>End-to-End 운영 안정화</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CASE 3 — 헬프센터·지원시스템 ===== -->
+<section id="case3">
+    <div class="eyebrow">Case Study 03 — 서비스 기획·운영</div>
+    <div class="case">
+        <span class="case-badge">PRODUCT · OPERATIONS</span>
+        <span class="case-where">네이버클라우드 Cloud Product Synergy · 차세대 업무협업 플랫폼 (2025–)</span>
+        <div class="case-title">NAVER WORKS 헬프센터·지원시스템 기획 — 한일 이중언어 운영 체계</div>
+        <div class="case-sub">CS 빈출 문의를 줄이려면 "FAQ를 더 만드는 것"이 아니라, 릴리즈노트–헬프센터–공지사항을 하나의 운영 표준으로 묶어야 한다.</div>
+
+        <div class="case-section">
+            <div class="case-section-title">📌 Context</div>
+            <p>NAVER WORKS는 한국·일본 두 시장을 동시에 운영하는 B2B SaaS입니다. 신규 기능 배포 시 릴리즈노트·헬프센터 문서·공지사항이 동시에 갱신되어야 하지만, 채널별로 작성 주체와 톤이 달라 사용자 입장에서 정보가 분절되고 CS 1차 응대 부담이 커지는 구조였습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title"><span class="star">⭐</span> Problem Definition</div>
+            <p>"문서를 더 만든다"가 아니라, <strong>"릴리즈노트–헬프센터–공지사항이 같은 메시지·같은 한일 번역 기준으로 동시에 나가는 운영 체계를 어떻게 만들 것인가"</strong>가 본질적 문제였습니다. 운영 체계가 없으면 어떤 콘텐츠를 추가해도 다음 배포에 다시 같은 균열이 발생합니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">⚖️ Key Considerations</div>
+            <div class="tradeoff">
+                <div class="tradeoff-label">Tradeoff Analysis</div>
+                <p><strong>채널별 자율성 vs 운영 표준</strong> — 채널마다 작성자가 다르고 톤이 달라야 하지만, 핵심 메시지·용어는 표준화되어야 사용자 혼란이 사라짐. 표준 템플릿 + 채널별 가이드로 분리</p>
+                <p style="margin-top:0.3rem;"><strong>한국어 우선 vs 한일 동시 발행</strong> — 한국어 먼저 발행 후 일본어 번역 운영은 시차 발생. "기능 배포 = 한일 동시 공개"를 운영 원칙으로 잡고 번역·검수 흐름 재설계</p>
+                <p style="margin-top:0.3rem;"><strong>FAQ 추가 vs 셀프서비스 카드 설계</strong> — 단순 FAQ 누적은 검색 정확도 저하. CS 빈출 주제를 카드형 셀프서비스로 재구성해 검색·해결 동선 단축</p>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🎯 My Role</div>
+            <ul>
+                <li>릴리즈노트–헬프센터–공지사항 표준 템플릿 설계 (콘텐츠 구조·핵심 메시지·CTA 통일)</li>
+                <li>한국어/일본어 동시 운영 가이드 작성 — 용어집 공유, 번역 검수 흐름 정의</li>
+                <li>CS 빈출 항목 분석 → 셀프서비스 카드 7종 신규 정착, 검색 동선 재설계</li>
+                <li>릴리즈노트 작성 — 외부 사용자 관점에서 "변경된 가치"가 즉시 보이도록 표현 정리</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🔧 Approach</div>
+            <ul>
+                <li>릴리즈노트가 변경 사실 나열로 끝나지 않도록 — "새로운 기능 / 개선사항 / 효과" 3분할 표준 도입</li>
+                <li>한국어 본문이 확정되어야 일본어 번역이 시작되던 흐름을 "초안 동시 작성 → 동시 검수" 흐름으로 변경해 발행 시차 제거</li>
+                <li>CS 문의 데이터를 주제·빈도 기준으로 분석해, 검색 1회 만에 해결 가능한 셀프서비스 카드를 설계</li>
+            </ul>
+        </div>
+
+        <div class="case-section slide-gallery">
+            <div class="slide-gallery-title">📎 검토 자료 (운영 산출물 재구성)</div>
+            <div class="slide-grid">
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/helpcenter_release.svg" alt="NAVER WORKS 릴리즈노트 표준 템플릿" loading="lazy">
+                    <div class="slide-caption"><strong>릴리즈노트 표준 템플릿</strong> — 새로운 기능 / 개선사항 / 효과 3분할 + 한국어·일본어 동시 발행 가이드</div>
+                </div>
+                <div class="slide-item">
+                    <div style="padding:1.1rem 1.2rem;">
+                        <div style="font-size:0.6rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Operating Note</div>
+                        <p style="font-size:0.78rem;color:var(--ink);line-height:1.7;font-weight:600;margin-bottom:0.5rem;">"문서가 아니라 운영 체계를 만든다."</p>
+                        <p style="font-size:0.74rem;color:var(--sub);line-height:1.7;">해피빈에서도 마찬가지입니다. 굿액션 캠페인 페이지·기업 파트너 가이드·해피로그 후기가 따로 움직이면 사용자·기업 모두 메시지가 흐려집니다. 같은 운영 표준으로 묶을 수 있는 경험을 그대로 옮길 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">💡 Decision</div>
+            <p>FAQ 추가가 아니라, <strong>릴리즈노트–헬프센터–공지사항을 하나의 운영 표준으로 묶는 방향</strong>을 선택했습니다. 표준 템플릿 + 한일 동시 발행 흐름 + 셀프서비스 카드 재설계의 3단 구조로 콘텐츠가 분절되지 않도록 운영 체계 자체를 바꿨습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">📈 Result</div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-v">▼ 57%</div>
+                    <div class="result-l">CS 1차 응대<br>리드타임 단축</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">한·일 동시</div>
+                    <div class="result-l">발행 시차 제거<br>"기능 배포 = 동시 공개"</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">셀프서비스 7종</div>
+                    <div class="result-l">CS 빈출 주제<br>검색 1회 해결 동선</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CASE 4 — 루닛케어 × 해피빈 ===== -->
+<section id="case4">
+    <div class="eyebrow">Case Study 04 — 신규 파트너십 제안</div>
+    <div class="case">
+        <span class="case-badge">PARTNERSHIP · CSR</span>
+        <span class="case-where">루닛케어 × 해피빈 · 자체 제안서 (2026.04)</span>
+        <div class="case-title">헬스케어 AI × 해피빈 — 서비스 기부 모델 기반 신규 매칭</div>
+        <div class="case-sub">현금 기부가 아닌, 환자 1인 × AI 전문 상담 1회 = 의료 정보 격차 1건 해소. 해피빈에 비어 있는 "헬스케어 AI" 영역을 직접 채우는 5장 제안서.</div>
+
+        <div class="case-section">
+            <div class="case-section-title">📌 Context</div>
+            <p>지원 준비 과정에서 해피빈의 20년 공익 기록(해피로그)·해피 히어로즈 39편·기업 파트너십 사례를 직접 분석했습니다. 헬스케어 AI 기업 CSR이 거의 비어 있는 반면, 의료·AI 사용자 관심 댓글은 2,722건에 달한다는 점을 확인했습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title"><span class="star">⭐</span> Problem Definition</div>
+            <p>"기업이 어떤 NGO에 얼마를 기부할 것인가"가 아니라, <strong>"기존 현금 기부로는 결합되지 않던 헬스케어 AI 기업의 서비스 자산과 해피빈의 검증된 NGO 생태계를 어떤 매칭 구조로 연결할 것인가"</strong>가 본질적 문제였습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">⚖️ Key Considerations</div>
+            <div class="tradeoff">
+                <div class="tradeoff-label">Tradeoff Analysis</div>
+                <p><strong>현금 기부 vs 서비스 기부</strong> — 현금은 회계·정산이 단순하지만 "기업의 강점"이 사용자 경험으로 전달되지 않음. 헬스케어 AI의 강점은 서비스이므로 서비스 기부 모델이 자연스러움</p>
+                <p style="margin-top:0.3rem;"><strong>기업 직접 매칭 vs NGO 경유 배분</strong> — 기업이 환자에게 직접 매칭하면 빠르지만 의료 정보 격차 환자 발굴 역량이 부족. 검증된 NGO를 경유해 정보 소외 계층 우선 배정 필요</p>
+                <p style="margin-top:0.3rem;"><strong>본 사업 vs 파일럿 우선</strong> — 헬스케어 CSR은 신규 영역이므로 12개월 본 사업화는 위험. 3개월 파일럿(이용권 500매)으로 KPI 검증 후 본 사업화 단계 설계</p>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🎯 My Role</div>
+            <ul>
+                <li>해피빈 공개 데이터(해피로그·해피 히어로즈) 분석 및 시장 공백 식별 (<strong>전체 리드</strong>)</li>
+                <li>3주체(해피빈·루닛케어·NGO) 매칭 구조 설계 — "굿액션 1건 = 이용권 1매" 단위 매칭</li>
+                <li>3개월 파일럿(암 환자 세이프티 넷 캠페인) 시나리오 + 5단계 실행 STEP 설계</li>
+                <li>3단계 12개월 로드맵(파일럿 → 확장 → 정착) + 4개 KPI(굿액션 참여율·이용권 사용율·NPS·해피로그 등록건) 정의</li>
+                <li>5장 제안서 자체 디자인·작성 (라이트 모드 · 해피빈 그린 톤 · NanumSquareNeo)</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">🔧 Approach</div>
+            <ul>
+                <li>해피빈 해피 히어로즈 39편을 직접 읽고 의료·AI 관련 사용자 댓글 2,722건을 정성 분석해, 시장 공백을 정량적으로 증명하는 근거 자료로 활용</li>
+                <li>"환자 1인 × AI 전문 상담 1회 = 의료 정보 격차 1건 해소"라는 단위 매칭 공식을 만들어, 기존 현금 기부와의 차별점을 한 줄로 압축</li>
+                <li>파일럿 KPI를 운영 가능한 4개로 좁히고, 각 단계(파일럿/확장/정착)별 산출물·기대 결과·후속 의사결정 기준을 명시</li>
+            </ul>
+        </div>
+
+        <div class="case-section slide-gallery">
+            <div class="slide-gallery-title">📎 자체 제작 제안서 (실제 산출물 · 5장)</div>
+            <div class="slide-grid g3">
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/happybean_slide_01.png" alt="Cover · AI 시대, 달라지는 기업 CSR 파트너십" loading="lazy">
+                    <div class="slide-caption"><strong>01 · Cover</strong> — AI 시대, 달라지는 기업 CSR 파트너십 : 기록에서 연결로</div>
+                </div>
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/happybean_slide_02.png" alt="Opportunity · 헬스케어 기업 CSR은 아직 해피빈에 없습니다" loading="lazy">
+                    <div class="slide-caption"><strong>02 · Opportunity</strong> — 20년 / 2,722건 / 공백 — 시장 공백 정량 증명</div>
+                </div>
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/happybean_slide_03.png" alt="Partnership Model · 기록이 연결을 만듭니다" loading="lazy">
+                    <div class="slide-caption"><strong>03 · Partnership Model</strong> — 해피빈 · 루닛케어 · 환자 3주체 매칭 구조</div>
+                </div>
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/happybean_slide_04.png" alt="Pilot · 암 환자 세이프티 넷 캠페인" loading="lazy">
+                    <div class="slide-caption"><strong>04 · Pilot</strong> — 3개월 파일럿 시나리오 + 5단계 실행 STEP</div>
+                </div>
+                <div class="slide-item" onclick="openLightbox(this)">
+                    <img src="slides/happybean_slide_05.png" alt="Roadmap & KPI · 3단계 실행 로드맵" loading="lazy">
+                    <div class="slide-caption"><strong>05 · Roadmap &amp; KPI</strong> — 12개월 마스터 플랜 + 4개 KPI 정의</div>
+                </div>
+                <div class="slide-item">
+                    <div style="padding:1rem 1.1rem;">
+                        <div style="font-size:0.6rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;">Author Note</div>
+                        <p style="font-size:0.74rem;color:var(--ink);line-height:1.65;font-weight:600;margin-bottom:0.4rem;">제안서는 모두 직접 작성했습니다.</p>
+                        <p style="font-size:0.72rem;color:var(--sub);line-height:1.7;">데이터 분석 · 매칭 구조 설계 · 슬라이드 디자인까지. 본 자료는 Claude Code + Google AI Studio를 활용해 작성했고, 입사 후에도 같은 AI 기반 업무 방식으로 파트너십 기획·성과 관리에 기여하고 싶습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">💡 Decision</div>
+            <p>현금 기부의 확장이 아니라, <strong>서비스 기부 모델을 통한 새로운 매칭 영역 개척</strong>을 제안했습니다. 해피빈 20년 공익 기록(검증 자산) × 헬스케어 AI(서비스 자산) × 검증 NGO(전달 자산)의 3주체 매칭 구조를 정의했고, 3개월 파일럿 → 확장 → 정착의 단계별 로드맵으로 위험 부담을 분산했습니다.</p>
+        </div>
+
+        <div class="case-section">
+            <div class="case-section-title">📈 Result</div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-v">자체 5장 제안서</div>
+                    <div class="result-l">분석·구조·슬라이드<br>전 과정 직접 제작</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">3주체 매칭</div>
+                    <div class="result-l">해피빈 · 루닛케어 · NGO<br>서비스 기부 모델 정의</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-v">12개월 로드맵</div>
+                    <div class="result-l">파일럿·확장·정착<br>4개 KPI · 단계별 의사결정 기준</div>
+                </div>
+            </div>
+            <p style="margin-top:0.6rem;font-size:0.74rem;color:var(--muted);">* 본 제안서는 지원자가 입사 전 기업 제휴 영역을 이해하고 있다는 점을 보여주기 위한 자체 산출물입니다. 실제 사업화 가정이 아닌 기획 역량 시연 목적입니다.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 5. CLOSING ===== -->
+<section id="closing">
+    <div class="eyebrow">Closing</div>
+    <h1 class="h1">CSR 파트너십을 <span class="em">하나의 사이클로 연결</span>하고 싶습니다.</h1>
+    <p class="lead">
+        기업·NGO·수혜자를 데이터의 신뢰로 묶어내는 일.<br>
+        의료 현장에서 5년, IT 운영에서 1년 — 두 세계를 직접 오가며 같은 운영 체계로 풀어 왔습니다.<br>
+        해피빈에서 이 경험을 신규 파트너십 발굴 → 운영 → 성과 보고의 한 사이클로 연결하고 싶습니다.
+    </p>
+
+    <div class="quote">
+        "비록 한 기업의 CSR 사업을 처음부터 끝까지 단독 리딩한 경험은 아직 부족하지만,<br>
+        현장 운영부터 정산·서비스 기획까지 각 단계의 실무 기반을 갖추었다고 자신합니다."
+    </div>
+
+    <div class="closing-grid">
+        <div class="closing-card">
+            <h4>현장의 진정성을 운영 가능한 언어로</h4>
+            <p>의료사회복지 현장에서는 "표면 사건 대응"이 아닌 "위험군 사전 발굴 워크플로"로, 루닛케어 제안서에서는 "현금 기부"가 아닌 "환자 1인 × AI 상담 1회 = 의료 정보 격차 1건 해소"로 — 진정성을 의사결정 가능한 단위로 다듬어 왔습니다.</p>
+        </div>
+        <div class="closing-card">
+            <h4>억 단위 정산 무결성, 12개월 누적</h4>
+            <p>네이버클라우드 앱마켓 6개사 정산을 매월 동일한 검증 시트로 운영해 분쟁 0건을 유지했습니다. 해피빈의 기업 기부금·굿액션 정산에 같은 운영 체계를 그대로 가져갈 수 있습니다.</p>
+        </div>
+        <div class="closing-card">
+            <h4>다직군·다국가 합의 구조 운영</h4>
+            <p>의료 현장에서는 정신건강의학과·간호·복지 3자 회의를, NAVER WORKS에서는 한·일 동시 발행 흐름을 운영했습니다. 해피빈의 기업·NGO·플랫폼 3자 합의 구조도 같은 방식으로 풀 수 있습니다.</p>
+        </div>
+        <div class="closing-card">
+            <h4>신규 파트너십을 직접 설계하는 사람</h4>
+            <p>지원 준비 과정에서 해피빈에 비어 있는 헬스케어 AI 영역을 직접 식별해 5장 제안서를 자체 제작했습니다. 입사 후에도 시장 공백 → 매칭 구조 → 파일럿 → 확장의 흐름을 직접 만들어내는 운영자가 되겠습니다.</p>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+    <div>&copy; 2026 Doyeon Kim · CSR Partnership Portfolio</div>
+    <div style="font-size:0.62rem;color:var(--muted);">[NAVER 해피빈] 기업 제휴 서비스 기획 및 영업 (CSR, 정규직) 지원</div>
+</div>
+</main>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Slide">
+</div>
+
+<script>
+document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',()=>{
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        document.getElementById(a.dataset.section).classList.add('active');
+        window.scrollTo(0,0);
+    });
+});
+
+function openLightbox(el){
+    const img=el.querySelector('img');
+    if(!img) return;
+    document.getElementById('lightbox-img').src=img.src;
+    document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+</script>
+</body>
+</html>

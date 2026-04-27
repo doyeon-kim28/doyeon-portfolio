@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <rect width="800" height="480" fill="#FAFAF9"/>
+  <rect x="24" y="24" width="752" height="48" rx="6" fill="#0C0A09"/>
+  <text x="44" y="54" font-family="Pretendard, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">국가 자살예방사업 — 위험군 사전 발굴 워크플로</text>
+  <rect x="640" y="36" width="120" height="24" rx="12" fill="#00AB33"/>
+  <text x="666" y="52" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">목표 120% ★</text>
+
+  <text x="40" y="108" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#A8A29E" letter-spacing="1">5단계 사례관리 프로세스</text>
+
+  <g font-family="Pretendard, sans-serif">
+    <rect x="40" y="124" width="140" height="120" rx="10" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <circle cx="60" cy="148" r="14" fill="#00AB33"/>
+    <text x="56" y="153" font-size="13" font-weight="800" fill="#FFFFFF">1</text>
+    <text x="84" y="152" font-size="12" font-weight="700" fill="#0C0A09">스크리닝</text>
+    <text x="56" y="184" font-size="11" fill="#57534E">자살위험 평가</text>
+    <text x="56" y="202" font-size="11" fill="#57534E">PHQ-9 / C-SSRS</text>
+    <text x="56" y="226" font-size="10" fill="#A8A29E">전 입원·외래 대상</text>
+
+    <rect x="196" y="124" width="140" height="120" rx="10" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <circle cx="216" cy="148" r="14" fill="#00AB33"/>
+    <text x="212" y="153" font-size="13" font-weight="800" fill="#FFFFFF">2</text>
+    <text x="240" y="152" font-size="12" font-weight="700" fill="#0C0A09">위험도 분류</text>
+    <text x="212" y="184" font-size="11" fill="#57534E">고위험 / 중위험</text>
+    <text x="212" y="202" font-size="11" fill="#57534E">/ 저위험</text>
+    <text x="212" y="226" font-size="10" fill="#A8A29E">3단계 트리아지</text>
+
+    <rect x="352" y="124" width="140" height="120" rx="10" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <circle cx="372" cy="148" r="14" fill="#00AB33"/>
+    <text x="368" y="153" font-size="13" font-weight="800" fill="#FFFFFF">3</text>
+    <text x="396" y="152" font-size="12" font-weight="700" fill="#0C0A09">다직군 협업</text>
+    <text x="368" y="184" font-size="11" fill="#57534E">정신건강의학과</text>
+    <text x="368" y="202" font-size="11" fill="#57534E">+ 간호 + 복지</text>
+    <text x="368" y="226" font-size="10" fill="#A8A29E">3자 회의 운영</text>
+
+    <rect x="508" y="124" width="140" height="120" rx="10" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <circle cx="528" cy="148" r="14" fill="#00AB33"/>
+    <text x="524" y="153" font-size="13" font-weight="800" fill="#FFFFFF">4</text>
+    <text x="552" y="152" font-size="12" font-weight="700" fill="#0C0A09">외부 연계</text>
+    <text x="524" y="184" font-size="11" fill="#57534E">정신건강복지센터</text>
+    <text x="524" y="202" font-size="11" fill="#57534E">생명사랑위기대응</text>
+    <text x="524" y="226" font-size="10" fill="#A8A29E">지자체 자원 매칭</text>
+
+    <rect x="664" y="124" width="112" height="120" rx="10" fill="#E5F7EB" stroke="#00AB33"/>
+    <circle cx="684" cy="148" r="14" fill="#008A29"/>
+    <text x="680" y="153" font-size="13" font-weight="800" fill="#FFFFFF">5</text>
+    <text x="708" y="152" font-size="12" font-weight="700" fill="#008A29">사후관리</text>
+    <text x="680" y="184" font-size="11" fill="#0C0A09">3·6·12개월</text>
+    <text x="680" y="202" font-size="11" fill="#0C0A09">추적 모니터</text>
+    <text x="680" y="226" font-size="10" fill="#008A29">재시도 차단</text>
+  </g>
+
+  <text x="40" y="284" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#A8A29E" letter-spacing="1">성과 지표</text>
+
+  <rect x="40" y="300" width="232" height="156" rx="8" fill="#FFFFFF" stroke="#E7E5E4"/>
+  <text x="60" y="328" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#0C0A09">위험군 사전 발굴 건수</text>
+  <text x="60" y="376" font-family="Pretendard, sans-serif" font-size="42" font-weight="800" fill="#00AB33">+47%</text>
+  <text x="60" y="402" font-family="Pretendard, sans-serif" font-size="11" fill="#57534E">전년 대비 사전 발굴률 증가</text>
+  <text x="60" y="430" font-family="Pretendard, sans-serif" font-size="10" fill="#A8A29E">스크리닝 표준화 + 다직군 회의 정례화</text>
+
+  <rect x="284" y="300" width="232" height="156" rx="8" fill="#FFFFFF" stroke="#E7E5E4"/>
+  <text x="304" y="328" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#0C0A09">사례관리 등록률</text>
+  <text x="304" y="376" font-family="Pretendard, sans-serif" font-size="42" font-weight="800" fill="#00AB33">120%</text>
+  <text x="304" y="402" font-family="Pretendard, sans-serif" font-size="11" fill="#57534E">국가 사업 목표 달성률</text>
+  <text x="304" y="430" font-family="Pretendard, sans-serif" font-size="10" fill="#A8A29E">중·고위험군 등록 + 6개월 사후관리 완료</text>
+
+  <rect x="528" y="300" width="248" height="156" rx="8" fill="#F0FBF4" stroke="#00AB33"/>
+  <text x="548" y="328" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#008A29">정책 확장 — 안전망 사업</text>
+  <text x="548" y="356" font-family="Pretendard, sans-serif" font-size="11" fill="#0C0A09">·  분당서울대 → 용인세브란스 확장</text>
+  <text x="548" y="378" font-family="Pretendard, sans-serif" font-size="11" fill="#0C0A09">·  대상 — 자살시도자 + 자해환자</text>
+  <text x="548" y="400" font-family="Pretendard, sans-serif" font-size="11" fill="#0C0A09">·  국고보조금 운영 + 결과 보고</text>
+  <text x="548" y="422" font-family="Pretendard, sans-serif" font-size="11" fill="#0C0A09">·  표준 운영 매뉴얼 직접 작성</text>
+  <text x="548" y="444" font-family="Pretendard, sans-serif" font-size="10" fill="#A8A29E">현장에서 정책으로 이어진 모델</text>
+</svg>
